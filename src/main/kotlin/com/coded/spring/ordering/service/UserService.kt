@@ -23,7 +23,7 @@ class UserService(
             throw ResponseStatusException(HttpStatus.BAD_REQUEST, "Username already exists")
         }
 
-        // Validate password strength
+        // Validating password strength
         if (!isValidPassword(user.password)) {
             throw ResponseStatusException(
                 HttpStatus.BAD_REQUEST,
