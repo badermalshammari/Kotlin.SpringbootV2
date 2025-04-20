@@ -1,23 +1,19 @@
 package com.coded.spring.ordering.authentication
 
-import com.coded.spring.ordering.repo.UserRepository
 import org.springframework.security.core.userdetails.*
+import com.coded.spring.ordering.repo.UserRepository
 import org.springframework.stereotype.Service
-import org.springframework.security.core.userdetails.User as SecurityUser
 
 @Service
 class CustomUserDetailsService(
-    private val userRepository: UserRepository
-) : UserDetailsService {
-
+    private val usersRepository: UserRepository) : UserDetailsService {
     override fun loadUserByUsername(username: String): UserDetails {
-        val user = userRepository.findByUsername(username)
-            ?: throw UsernameNotFoundException("User not found")
+        val user = usersRepository.findByUsername(username) ?: throw UsernameNotFoundException("User not found")
 
-        return SecurityUser.builder()
+        return User.builder()
             .username(user.username)
             .password(user.password)
-            .roles("USER")
+            .roles(user.role.toString())
             .build()
     }
 }
