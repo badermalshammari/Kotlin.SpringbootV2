@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration
 class AppProperties {
     lateinit var companyName: String
     var festiveMode: Boolean = false
-    var festiveMessage: String = "Eidkom Mubarak"
+    var festiveMessage: String = "Eidkom Mubarak Coded"
     var festiveDiscount: Int = 20
 }

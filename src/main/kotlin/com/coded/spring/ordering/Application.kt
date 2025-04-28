@@ -11,7 +11,7 @@ class Application
 
 fun main(args: Array<String>) {
 	runApplication<Application>(*args)
-	helloWorldConfig.getMapConfig("pets").setTimeToLiveSeconds(5)
+	helloWorldConfig.getMapConfig("pets").setTimeToLiveSeconds(10)
 }
 
 val helloWorldConfig = Config("hello-world-cache")
