@@ -16,15 +16,15 @@ class InitUserRunner {
         val user = User(
             name = "HelloUser",
             username = "testuser",
-            password = passwordEncoder.encode("Password123"),
+            password = passwordEncoder.encode("Password123@"),
             age = 18,
             role = Roles.ADMIN
         )
         if (userRepository.findByUsername(user.username) == null) {
-            println("✅ Creating user ${user.username}")
+            println("Creating user ${user.username}")
             userRepository.save(user)
         } else {
-            println("⚠️ User ${user.username} already exists")
+            println("User ${user.username} already exists")
         }
     }
 }

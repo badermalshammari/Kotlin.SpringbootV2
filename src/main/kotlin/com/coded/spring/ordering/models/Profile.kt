@@ -17,6 +17,8 @@ data class Profile(
     val lastName : String = "",
     val phoneNumber : String = ""
 
-)
+){
+    constructor() : this(0, User(), "", "", "")
+}
 
 

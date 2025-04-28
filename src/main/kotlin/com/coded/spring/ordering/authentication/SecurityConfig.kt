@@ -35,7 +35,7 @@ class SecurityConfig(
                     .requestMatchers("/profile/**").authenticated()
                     .requestMatchers("/menu/**").authenticated()
 
-                    .anyRequest().authenticated()
+                    .anyRequest().permitAll()
             }
             .sessionManagement {
                 it.sessionCreationPolicy(SessionCreationPolicy.STATELESS)

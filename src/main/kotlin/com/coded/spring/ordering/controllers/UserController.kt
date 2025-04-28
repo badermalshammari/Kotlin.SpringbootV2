@@ -1,4 +1,4 @@
-package com.coded.spring.ordering.controller
+package com.coded.spring.ordering.controllers
 
 import com.coded.spring.ordering.models.User
 import com.coded.spring.ordering.repo.UserRepository
